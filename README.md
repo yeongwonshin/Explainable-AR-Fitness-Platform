@@ -4,18 +4,6 @@ This repository is a platform-structured prototype based on the system proposed 
 
 > This project is a research prototype. It does not replace medical diagnosis, treatment, or rehabilitation prescription, and expert review is required before applying it to real users.
 
-## Mapping Between Paper Components and Platform Directories
-
-| Paper Component | Implementation Location | Description |
-|---|---|---|
-| Single smartphone camera input | `frontend/src/components/CameraCapture.tsx` | Mobile browser camera and view-based capture |
-| Joint coordinate extraction based on MediaPipe Pose | `frontend/src/vision/poseLandmarker.ts`, `backend/app/pose/mediapipe_adapter.py` | Extensible structure for both web and server-side processing |
-| Extraction of body-type features F1~F5 | `backend/app/pose/feature_extractor.py` | Forward head posture, rounded shoulders, left-right shoulder asymmetry, left-right upper-body balance, and trunk flexion |
-| Body-type profiling | `backend/app/profiling/model_service.py` | Loads the XGBoost model, with a rule-based fallback when no model is available |
-| SHAP-based explanation | `backend/app/explain/shap_service.py` | Provides mean \|SHAP\| values and sample-level feature contribution structures |
-| Personalized exercise recommendation | `backend/app/recommendation/exercise_rules.py` | Three-stage recommendation: Release, Activate, and Strengthen |
-| AR exercise guidance and result overlay | `frontend/src/components/AROverlay.tsx`, `ResultPanel.tsx` | Visualizes feature lines, body-type results, and recommended exercises |
-| Preliminary experiment/training | `backend/scripts/train_xgboost.py` | Training based on Kaggle data or CSV-formatted feature data |
 
 ## Overall Architecture
 
